@@ -81,7 +81,8 @@ export class ClientsTableComponent implements OnInit {
       data: data
     }).afterClosed().subscribe(result => {
       if (result) {
-        this.tableComp.loadItems();
+        if (!client)
+          this.tableComp.loadItems();
       }
     });
   }
